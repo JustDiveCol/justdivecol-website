@@ -1,0 +1,63 @@
+# Archivo .gitignore para el proyecto JustDiveCol
+# Este archivo especifica los archivos y carpetas que Git debe ignorar.
+
+# --- Dependencias ---
+# La carpeta de dependencias de Node.js, que puede pesar cientos de megabytes.
+# Siempre se debe ignorar y reinstalar con `npm install`.
+node_modules/
+
+# --- Salida de Compilación (Build Output) ---
+# Carpetas donde Vite (o otras herramientas) colocan la versión final y optimizada del sitio.
+dist/
+dist-ssr/ # Añadido: Directorio de salida para Server-Side Rendering con Vite.
+build/
+
+# --- Archivos de Entorno ---
+# Estos archivos contienen claves de API, contraseñas y otras variables sensibles.
+# NUNCA deben subirse a un repositorio público.
+.env
+.env.local
+.env.*.local
+
+# --- Archivos de Caché y Logs ---
+# Archivos temporales generados por npm, yarn, pnpm, o el propio Node.js.
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Caché de herramientas de desarrollo
+.parcel-cache/
+.cache/
+.vite/ # Añadido: Caché específico de Vite.
+.eslintcache
+
+# --- Archivos de Sistema Operativo ---
+# Archivos generados automáticamente por macOS y Windows que no son parte del proyecto.
+.DS_Store
+Thumbs.db
+
+# --- Archivos de IDE y Editores de Código ---
+# Carpetas y archivos de configuración específicos de tu editor para evitar conflictos
+# con otros desarrolladores que usen un editor diferente.
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+estructura.txt
+
+# --- Archivos Temporales y de Backup ---
+*.swp
+*.tmp
+*.bak
+
+# --- Reportes de Cobertura de Pruebas (Testing) ---
+coverage/
+*.lcov
+
+# --- TypeScript ---
+# Archivos de información de compilación de TypeScript.
+*.tsbuildinfo # Añadido: Para mayor robustez si se usa TypeScript.
+

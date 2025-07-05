@@ -1,0 +1,10 @@
+# Permite que todos los motores rastreen todo
+User-agent: *
+Allow: /
+
+# Bloquea carpetas técnicas (no públicas)
+Disallow: /node_modules/
+Disallow: /src/
+
+# Indica la ubicación del sitemap
+Sitemap: https://www.justdivecol.com/sitemap.xml
