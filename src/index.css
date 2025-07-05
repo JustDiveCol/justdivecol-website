@@ -1,0 +1,23 @@
+/* --------------------------------------------
+   Tailwind CSS Base Configuration
+   -------------------------------------------- */
+
+/* Importa los estilos base predeterminados de Tailwind */
+@tailwind base;
+
+/* Importa los componentes de Tailwind (botones, formularios, etc.) */
+@tailwind components;
+
+/* Importa las utilidades de Tailwind (márgenes, padding, color, etc.) */
+@tailwind utilities;
+
+/* --------------------------------------------
+   Personalización del estilo base
+   -------------------------------------------- */
+
+@layer base {
+  /* Establece la tipografía base para todo el body */
+  body {
+    font-family: 'Lora', 'serif';
+  }
+}

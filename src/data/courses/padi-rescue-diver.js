@@ -1,0 +1,79 @@
+export const padiRescueDiverData = {
+  id: "padi-rescue-diver",
+  name: "PADI Rescue Diver",
+  type: "certification",
+  seo: {
+    title: "Curso PADI Rescue Diver | Buceo de Rescate con JustDiveCol",
+    description: "Conviértete en un buzo más seguro y confiable. Aprende a prevenir y gestionar emergencias con el curso PADI Rescue Diver de JustDiveCol."
+  },
+  header: {
+    title: "PADI RESCUE DIVER",
+    subtitle: "Conviértete en el buzo en el que todos confían.",
+    imageUrl:
+      "https://placehold.co/1920x800/133e70/FFFFFF?text=Buzo+de+Rescate",
+  },
+  description: {
+    title: "Aprende a Prevenir y Gestionar Emergencias",
+    paragraphs: [
+      "El curso PADI Rescue Diver cambiará tu forma de bucear, y lo hará de la mejor manera posible. Aprenderás a identificar y solucionar problemas menores antes de que se conviertan en problemas mayores, y ganarás muchísima confianza en tus habilidades como buzo.",
+      "Es un curso desafiante pero increíblemente gratificante. A través de escenarios realistas, te prepararás para ayudar a otros y a ti mismo, convirtiéndote en un compañero de buceo mucho más completo y seguro.",
+    ],
+  },
+  details: {
+    title: "Detalles del Curso",
+    items: [
+      { label: "Duración", value: "3 Días Intensivos" },
+      { label: "Prerrequisito", value: "PADI Advanced Open Water" },
+      { label: "Enfoque", value: "Resolución de problemas" },
+    ],
+  },
+  curriculum: {
+    title: "Habilidades que Salvan Vidas",
+    modules: [
+      {
+        id: "teoria",
+        name: "Psicología del Rescate y Autorescate",
+        description:
+          "Comprenderás el estrés en buzos, el manejo de emergencias y las técnicas para mantener la calma y actuar de manera efectiva.",
+      },
+      {
+        id: "ejercicios",
+        name: "Ejercicios de Rescate",
+        description:
+          "Practicarás más de 10 habilidades de rescate, desde ayudar a un buzo cansado en superficie hasta responder ante un buzo que no responde bajo el agua.",
+      },
+      {
+        id: "escenarios",
+        name: "Escenarios de Emergencia",
+        description:
+          "Integrarás todas tus habilidades en dos escenarios finales que simulan una situación de emergencia real, poniendo a prueba tu capacidad de respuesta.",
+      },
+    ],
+  },
+  whatIsIncluded: {
+    title: "¿Qué Incluye tu Entrenamiento de Rescate?",
+    items: [
+      "Certificación Internacional PADI Rescue Diver",
+      "Certificación de Primeros Auxilios y RCP (EFR)",
+      "Acceso a la plataforma PADI eLearning® para ambos cursos",
+      "Entrenamiento intensivo de habilidades y escenarios",
+      "Desarrollo de un plan de emergencia personal",
+      "Acompañamiento de un Instructor PADI especializado",
+      "Seguro de buceo DAN durante las actividades acuáticas",
+    ],
+  },
+  gallery: {
+    title: "Momentos del Entrenamiento",
+    images: [
+      "https://placehold.co/800x600/36598B/FFFFFF?text=Simulacro+de+Rescate",
+      "https://placehold.co/800x600/36598B/FFFFFF?text=Asistencia+en+Superficie",
+      "https://placehold.co/800x600/36598B/FFFFFF?text=Plan+de+Emergencia",
+      "https://placehold.co/800x600/36598B/FFFFFF?text=Equipo+de+Oxígeno",
+    ],
+  },
+  cta: {
+    title: "¿No ves una fecha que te funcione?",
+    buttonText: "Contáctanos para más opciones",
+    link: "/contacto",
+  },
+};

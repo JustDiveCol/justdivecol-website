@@ -1,0 +1,54 @@
+export const expedicionSanAndresData = {
+  id: 'expedicion-san-andres',
+  name: 'Expedición a San Andrés',
+  type: 'trip',
+  header: {
+    title: 'EXPEDICIÓN SAN ANDRÉS',
+    subtitle: 'Sumérgete en el corazón del mar de los siete colores.',
+    imageUrl: 'https://placehold.co/1920x800/36598B/FFFFFF?text=San+Andrés+Submarino',
+  },
+  description: {
+    title: 'Un Paraíso de Coral en el Caribe',
+    paragraphs: [
+      'La expedición a San Andrés es un viaje al epicentro de la biodiversidad marina de Colombia. Famosa por sus aguas cristalinas y su vibrante vida de arrecife, esta isla ofrece una experiencia de buceo inolvidable tanto para buzos novatos como para los más experimentados.',
+      'Prepárate para explorar paredes que se pierden en el azul profundo, nadar entre cardúmenes de peces coloridos y descubrir los secretos que esconden sus pecios. Todo, con la logística y seguridad que solo JustDiveCol puede ofrecerte.'
+    ]
+  },
+  details: {
+    title: 'Detalles del Viaje',
+    startDate: '2025-08-05',
+    endDate: '2025-08-10',
+    items: [
+      { label: 'Precio', value: 'Desde COP 2.500.000' },
+      { label: 'Inmersiones', value: '8 Inmersiones diurnas' },
+      { label: 'Nivel Mínimo', value: 'Open Water Diver' },
+    ]
+  },
+  itinerary: {
+    title: 'Itinerario Propuesto',
+    days: [
+      { day: 1, title: 'Llegada y Check-in', description: 'Arribo a San Andrés, traslado al hotel y briefing de bienvenida para conocer al equipo y los detalles de la semana.' },
+      { day: 2, title: 'Inmersiones de Adaptación', description: 'Dos inmersiones matutinas en puntos de buceo tranquilos para aclimatarse, como "La Piscinita" y "West View". Tarde libre.' },
+      { day: 3, title: 'Paredes y Corales', description: 'Exploramos las famosas paredes de "El Acuario" y "Blue Wall", donde la vida marina abunda. Dos inmersiones.' },
+      { day: 4, title: 'Pecios y Aventura', description: 'Dedicamos el día a explorar los pecios hundidos cerca de la costa, como el "Blue Diamond". Dos inmersiones llenas de historia.' },
+      { day: 5, title: 'Última Inmersión y Regreso', description: 'Una última inmersión por la mañana y tiempo libre para disfrutar de la isla antes del vuelo de regreso.' }
+    ]
+  },
+  whatIsIncluded: {
+    title: '¿Qué Incluye tu Viaje?',
+    items: [ 'Alojamiento en hotel seleccionado', 'Traslados aeropuerto-hotel-aeropuerto', '8 inmersiones guiadas (incluye tanques y lastre)', 'Guía PADI local experto', 'Refrigerios en el bote' ]
+  },
+  whatIsNotIncluded: {
+    title: '¿Qué NO Incluye?',
+    items: [ 'Tiquetes aéreos a San Andrés', 'Alquiler de equipo de buceo personal', 'Alimentación no especificada', 'Tarjeta de turismo de la isla' ]
+  },
+  offeredCourses: {
+    title: 'Cursos Disponibles en este Viaje',
+    ids: ['padi-advanced-open-water', 'padi-rescue-diver']
+  },
+  cta: {
+    title: '¿Listo para el Caribe?',
+    buttonText: 'Reserva tu Cupo',
+    link: '/contacto'
+  }
+};
