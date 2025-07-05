@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+// import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 
 // Layout principal
 import App from "./App.jsx";
@@ -23,7 +24,8 @@ import UnderConstructionPage from "./pages/UnderConstructionPage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 
 // Configuración de rutas con React Router
-const router = createBrowserRouter([
+// const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <App />,
