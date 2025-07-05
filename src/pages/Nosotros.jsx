@@ -1,16 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { nosotrosPageData as data } from "../data/siteData";
-// Se importan las animaciones reutilizables para mantener la consistencia.
 import { staggerContainer, fadeInFromBottom } from "../utils/animations";
-
 import SEO from "../components/SEO";
 
-// --- Subcomponentes de Presentación (Sin Lógica de Animación Propia) ---
+// --- Subcomponentes de Presentación ---
 
-/**
- * Icono de estrella para la sección de "Fun Facts".
- */
 const StarIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -22,9 +17,6 @@ const StarIcon = () => (
   </svg>
 );
 
-/**
- * Encabezado de la página con imagen de fondo y título.
- */
 const PageHeader = ({ title, subtitle, imageUrl }) => (
   <section
     className="relative h-80 bg-cover bg-center text-brand-white flex items-center justify-center text-center"
@@ -42,13 +34,16 @@ const PageHeader = ({ title, subtitle, imageUrl }) => (
   </section>
 );
 
-/**
- * Sección que narra la historia de la empresa.
- */
 const HistorySection = ({ historyData }) => (
-  <section className="py-20 px-4 bg-brand-primary-dark">
+  <motion.section
+    variants={staggerContainer}
+    initial="hidden"
+    animate="show"
+    viewport={{ once: true, amount: 0.2 }}
+    className="py-20 px-4 bg-brand-primary-dark"
+  >
     <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
-      <div>
+      <motion.div variants={fadeInFromBottom}>
         <h2 className="text-3xl md:text-4xl font-sans font-bold text-brand-white mb-6">
           {historyData.title}
         </h2>
@@ -57,33 +52,49 @@ const HistorySection = ({ historyData }) => (
             <p key={index}>{p}</p>
           ))}
         </div>
-      </div>
-      <div className="h-[500px] rounded-lg overflow-hidden shadow-2xl">
+      </motion.div>
+      <motion.div
+        variants={fadeInFromBottom}
+        className="h-[500px] rounded-lg overflow-hidden shadow-2xl"
+      >
         <img
           src={historyData.imageUrl}
           alt="Historia de JustDiveCol"
           className="w-full h-full object-cover"
         />
-      </div>
+      </motion.div>
     </div>
-  </section>
+  </motion.section>
 );
 
-/**
- * Sección que presenta a los miembros del equipo.
- */
 const TeamSection = ({ teamData }) => (
-  <section className="py-20 px-4 bg-brand-primary-medium">
+  <motion.section
+    variants={staggerContainer}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true, amount: 0.2 }}
+    className="py-20 px-4 bg-brand-primary-medium"
+  >
     <div className="container mx-auto text-center">
-      <h2 className="text-4xl md:text-5xl font-sans font-bold text-brand-white uppercase">
+      <motion.h2
+        variants={fadeInFromBottom}
+        className="text-4xl md:text-5xl font-sans font-bold text-brand-white uppercase"
+      >
         {teamData.title}
-      </h2>
-      <p className="mt-4 max-w-3xl mx-auto font-serif text-lg text-brand-neutral">
+      </motion.h2>
+      <motion.p
+        variants={fadeInFromBottom}
+        className="mt-4 max-w-3xl mx-auto font-serif text-lg text-brand-neutral"
+      >
         {teamData.subtitle}
-      </p>
-      <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      </motion.p>
+      <motion.div
+        variants={staggerContainer}
+        className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
         {teamData.members.map((member) => (
-          <div
+          <motion.div
+            variants={fadeInFromBottom}
             key={member.id}
             className="bg-brand-primary-dark p-6 rounded-lg shadow-xl text-center flex flex-col"
           >
@@ -113,16 +124,13 @@ const TeamSection = ({ teamData }) => (
                 </ul>
               </div>
             )}
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
-  </section>
+  </motion.section>
 );
 
-/**
- * Sección que destaca los valores y el compromiso de la empresa.
- */
 const CommitmentSection = ({ commitmentData }) => {
   const icons = {
     leaf: (
@@ -176,17 +184,36 @@ const CommitmentSection = ({ commitmentData }) => {
   };
 
   return (
-    <section className="py-20 px-4 bg-brand-primary-dark">
+    <motion.section
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+      className="py-20 px-4 bg-brand-primary-dark"
+    >
       <div className="container mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-sans font-bold text-brand-white uppercase">
+        <motion.h2
+          variants={fadeInFromBottom}
+          className="text-4xl md:text-5xl font-sans font-bold text-brand-white uppercase"
+        >
           {commitmentData.title}
-        </h2>
-        <p className="mt-4 max-w-3xl mx-auto font-serif text-lg text-brand-neutral">
+        </motion.h2>
+        <motion.p
+          variants={fadeInFromBottom}
+          className="mt-4 max-w-3xl mx-auto font-serif text-lg text-brand-neutral"
+        >
           {commitmentData.subtitle}
-        </p>
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+        </motion.p>
+        <motion.div
+          variants={staggerContainer}
+          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10"
+        >
           {commitmentData.points.map((point) => (
-            <div key={point.id} className="flex flex-col items-center">
+            <motion.div
+              variants={fadeInFromBottom}
+              key={point.id}
+              className="flex flex-col items-center"
+            >
               <div className="text-brand-cta-green mb-4">
                 {icons[point.icon]}
               </div>
@@ -196,49 +223,31 @@ const CommitmentSection = ({ commitmentData }) => {
               <p className="mt-2 font-serif text-brand-neutral/80">
                 {point.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
 // --- Componente Principal de la Página ---
 
-/**
- * Página "Nosotros" que compone las diferentes secciones de la historia,
- * el equipo y el compromiso de la empresa.
- */
 const Nosotros = () => {
   return (
-    // El contenedor principal orquesta la animación en cascada de sus hijos.
     <>
       <SEO title={data.seo.title} description={data.seo.description} />
-
-      <motion.div
-        variants={staggerContainer}
-        initial="hidden"
-        animate="show"
-        exit="hidden"
-      >
-        <motion.div variants={fadeInFromBottom}>
-          <PageHeader
-            title={data.header.title}
-            subtitle={data.header.subtitle}
-            imageUrl={data.header.imageUrl}
-          />
-        </motion.div>
-        <motion.div variants={fadeInFromBottom}>
-          <HistorySection historyData={data.history} />
-        </motion.div>
-        <motion.div variants={fadeInFromBottom}>
-          <TeamSection teamData={data.team} />
-        </motion.div>
-        <motion.div variants={fadeInFromBottom}>
-          <CommitmentSection commitmentData={data.commitment} />
-        </motion.div>
-      </motion.div>
+      {/* El contenedor principal ya no necesita animaciones, se las hemos dado a cada sección. */}
+      <div>
+        <PageHeader
+          title={data.header.title}
+          subtitle={data.header.subtitle}
+          imageUrl={data.header.imageUrl}
+        />
+        <HistorySection historyData={data.history} />
+        <TeamSection teamData={data.team} />
+        <CommitmentSection commitmentData={data.commitment} />
+      </div>
     </>
   );
 };

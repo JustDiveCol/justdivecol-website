@@ -4,16 +4,12 @@ import { Link } from "react-router-dom";
 // Se importan los datos y las animaciones reutilizables.
 import { seguridadPageData as data } from "../data/siteData";
 import { staggerContainer, fadeInFromBottom } from "../utils/animations";
-
 import SEO from "../components/SEO";
 
 // -----------------------------
-// Subcomponentes de Presentación (Sin Lógica de Animación Propia)
+// Subcomponentes de Presentación
 // -----------------------------
 
-/**
- * Encabezado de la página con imagen de fondo y título.
- */
 const PageHeader = ({ title, subtitle, imageUrl }) => (
   <section
     className="relative h-80 bg-cover bg-center text-brand-white flex items-center justify-center text-center"
@@ -31,24 +27,42 @@ const PageHeader = ({ title, subtitle, imageUrl }) => (
   </section>
 );
 
-/**
- * Sección que detalla los protocolos de seguridad.
- */
 const ProtocolsSection = ({ protocolsData }) => (
   <section className="py-20 px-4 bg-brand-primary-dark">
-    <div className="container mx-auto">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-sans font-bold text-brand-white uppercase">
-          {protocolsData.title}
-        </h2>
-        <p className="mt-4 max-w-3xl mx-auto font-serif text-lg text-brand-neutral">
-          {protocolsData.subtitle}
-        </p>
-      </div>
-      <div className="max-w-4xl mx-auto space-y-8">
+    <motion.div
+      className="container mx-auto"
+      variants={staggerContainer}
+      initial="hidden"
+      animate="show"
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <motion.div className="text-center mb-12">
+        <motion.div variants={fadeInFromBottom}>
+          <motion.h2
+            variants={fadeInFromBottom}
+            className="text-4xl md:text-5xl font-sans font-bold text-brand-white uppercase"
+          >
+            {protocolsData.title}
+          </motion.h2>
+          <motion.p
+            variants={fadeInFromBottom}
+            className="mt-4 max-w-3xl mx-auto font-serif text-lg text-brand-neutral"
+          >
+            {protocolsData.subtitle}
+          </motion.p>
+        </motion.div>
+      </motion.div>
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        animate="show"
+        viewport={{ once: true, amount: 0.2 }}
+        className="max-w-4xl mx-auto space-y-8"
+      >
         {protocolsData.steps.map((step) => (
-          <div
+          <motion.div
             key={step.id}
+            variants={fadeInFromBottom}
             className="flex items-start space-x-6 bg-brand-primary-medium p-6 rounded-lg"
           >
             <div className="flex-shrink-0 text-3xl font-sans font-bold text-brand-cta-green">
@@ -62,18 +76,14 @@ const ProtocolsSection = ({ protocolsData }) => (
                 {step.description}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   </section>
 );
 
-/**
- * Sección que muestra el equipamiento de buceo.
- */
 const EquipmentSection = ({ equipmentData }) => {
-  // Mapeo de IDs a componentes de íconos para un renderizado dinámico.
   const icons = {
     regulator: (
       <svg
@@ -123,17 +133,36 @@ const EquipmentSection = ({ equipmentData }) => {
 
   return (
     <section className="py-20 px-4 bg-brand-primary-medium border-t-2 border-brand-primary-light/10">
-      <div className="container mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-sans font-bold text-brand-white uppercase">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        className="container mx-auto text-center"
+      >
+        <motion.h2
+          variants={fadeInFromBottom}
+          className="text-4xl md:text-5xl font-sans font-bold text-brand-white uppercase"
+        >
           {equipmentData.title}
-        </h2>
-        <p className="mt-4 max-w-3xl mx-auto font-serif text-lg text-brand-neutral">
+        </motion.h2>
+        <motion.p
+          variants={fadeInFromBottom}
+          className="mt-4 max-w-3xl mx-auto font-serif text-lg text-brand-neutral"
+        >
           {equipmentData.subtitle}
-        </p>
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        </motion.p>
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
+        >
           {equipmentData.items.map((item) => (
-            <div
+            <motion.div
               key={item.id}
+              variants={fadeInFromBottom}
               className="bg-brand-primary-dark p-8 rounded-lg shadow-xl text-center"
             >
               <div className="text-brand-cta-green inline-block mb-4">
@@ -145,32 +174,42 @@ const EquipmentSection = ({ equipmentData }) => {
               <p className="mt-2 font-serif text-brand-neutral/80">
                 {item.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
 
-/**
- * Sección que muestra las certificaciones y alianzas.
- */
 const CertificationsSection = ({ certificationsData }) => (
   <section className="py-20 px-4 bg-brand-primary-dark">
-    <div className="container mx-auto">
-      <div className="text-center mb-12">
+    <motion.div
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+      className="container mx-auto"
+    >
+      <motion.div variants={fadeInFromBottom} className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-sans font-bold text-brand-white uppercase">
           {certificationsData.title}
         </h2>
         <p className="mt-4 max-w-3xl mx-auto font-serif text-lg text-brand-neutral">
           {certificationsData.subtitle}
         </p>
-      </div>
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      </motion.div>
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+      >
         {certificationsData.partners.map((partner) => (
-          <div
+          <motion.div
             key={partner.id}
+            variants={fadeInFromBottom}
             className="bg-brand-primary-medium p-8 rounded-lg shadow-xl flex flex-col md:flex-row items-center text-center md:text-left gap-6"
           >
             <div className="flex-shrink-0">
@@ -188,45 +227,33 @@ const CertificationsSection = ({ certificationsData }) => (
                 {partner.description}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   </section>
 );
 
 // --- Componente Principal de la Página ---
 
-/**
- * Página de Seguridad que compone las diferentes secciones.
- * Orquesta la animación de entrada de todas sus secciones.
- */
 const Seguridad = () => (
   <>
     <SEO title={data.seo.title} description={data.seo.description} />
-
     <motion.div
-      variants={staggerContainer}
-      initial="hidden"
-      animate="show"
-      exit="hidden"
+      // La página principal ahora solo gestiona la transición de entrada/salida.
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
     >
-      <motion.div variants={fadeInFromBottom}>
-        <PageHeader
-          title={data.header.title}
-          subtitle={data.header.subtitle}
-          imageUrl={data.header.imageUrl}
-        />
-      </motion.div>
-      <motion.div variants={fadeInFromBottom}>
-        <ProtocolsSection protocolsData={data.protocols} />
-      </motion.div>
-      <motion.div variants={fadeInFromBottom}>
-        <EquipmentSection equipmentData={data.equipment} />
-      </motion.div>
-      <motion.div variants={fadeInFromBottom}>
-        <CertificationsSection certificationsData={data.certifications} />
-      </motion.div>
+      <PageHeader
+        title={data.header.title}
+        subtitle={data.header.subtitle}
+        imageUrl={data.header.imageUrl}
+      />
+      <ProtocolsSection protocolsData={data.protocols} />
+      <EquipmentSection equipmentData={data.equipment} />
+      <CertificationsSection certificationsData={data.certifications} />
     </motion.div>
   </>
 );

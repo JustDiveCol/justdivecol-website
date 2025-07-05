@@ -3,17 +3,12 @@ import { motion } from "framer-motion";
 import { contactoPageData as data } from "../data/siteData";
 // Se importan las animaciones consistentes para la página.
 import { staggerContainer, fadeInFromBottom } from "../utils/animations";
-
 import SEO from "../components/SEO";
 
 // -----------------------------
-// Subcomponentes de presentación
+// Subcomponentes de Presentación (Sin Lógica de Animación Propia)
 // -----------------------------
 
-/**
- * Encabezado de la página con imagen de fondo y título centrado.
- * Este componente es reutilizable en varias páginas.
- */
 const PageHeader = ({ title, subtitle, imageUrl }) => (
   <section
     className="relative h-80 bg-cover bg-center text-brand-white flex items-center justify-center text-center"
@@ -112,20 +107,13 @@ const YouTubeIcon = () => (
 // Componente principal de Contacto
 // -----------------------------
 
-/**
- * Página de contacto con información de correo, WhatsApp y redes sociales.
- * Incluye un botón para abrir el cliente de correo con un mensaje predefinido.
- */
 const Contacto = () => {
-  // Construye el enlace "mailto" con el asunto y cuerpo predefinidos desde los datos.
-  // `encodeURIComponent` asegura que los caracteres especiales se manejen correctamente.
   const mailtoHref = `mailto:${
     data.contactInfo.email
   }?subject=${encodeURIComponent(
     data.mailToAction.subject
   )}&body=${encodeURIComponent(data.mailToAction.body)}`;
 
-  // Mapea los nombres de los iconos a sus componentes SVG para un renderizado dinámico.
   const socialIcons = {
     instagram: <InstagramIcon />,
     tiktok: <TikTokIcon />,
@@ -133,17 +121,15 @@ const Contacto = () => {
   };
 
   return (
-    // Contenedor principal que orquesta la animación de entrada de la página.
     <>
       <SEO title={data.seo.title} description={data.seo.description} />
-
+      {/* CORRECCIÓN: Se aplica el patrón de animación consistente */}
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         animate="show"
         exit="hidden"
       >
-        {/* Cada sección principal es un hijo animado. */}
         <motion.div variants={fadeInFromBottom}>
           <PageHeader
             title={data.header.title}
@@ -152,75 +138,75 @@ const Contacto = () => {
           />
         </motion.div>
 
-        {/* Se convierte la sección en un componente `motion` para simplificar la estructura. */}
-        <motion.section variants={fadeInFromBottom} className="py-20 px-4">
-          <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
-            {/* Columna Izquierda: Información de contacto y redes sociales */}
-            <div className="text-brand-white">
-              <h2 className="text-3xl font-sans font-bold mb-6">
-                Canales de Comunicación
-              </h2>
-              <div className="space-y-4 font-serif text-lg">
-                <a
-                  href={`mailto:${data.contactInfo.email}`}
-                  className="flex items-center hover:text-brand-cta-orange transition-colors"
-                >
-                  <MailIcon />
-                  <span>{data.contactInfo.email}</span>
-                </a>
-                <a
-                  href={`https://wa.me/${data.contactInfo.phone.replace(
-                    /\s/g,
-                    ""
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center hover:text-brand-cta-orange transition-colors"
-                >
-                  <PhoneIcon />
-                  <span>{data.contactInfo.phone} (WhatsApp)</span>
-                </a>
-              </div>
+        <motion.div variants={fadeInFromBottom}>
+          <section className="py-20 px-4">
+            <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+              {/* Columna Izquierda: Información de contacto y redes sociales */}
+              <div className="text-brand-white">
+                <h2 className="text-3xl font-sans font-bold mb-6">
+                  Canales de Comunicación
+                </h2>
+                <div className="space-y-4 font-serif text-lg">
+                  <a
+                    href={`mailto:${data.contactInfo.email}`}
+                    className="flex items-center hover:text-brand-cta-orange transition-colors"
+                  >
+                    <MailIcon />
+                    <span>{data.contactInfo.email}</span>
+                  </a>
+                  <a
+                    href={`https://wa.me/${data.contactInfo.phone.replace(
+                      /\s/g,
+                      ""
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center hover:text-brand-cta-orange transition-colors"
+                  >
+                    <PhoneIcon />
+                    <span>{data.contactInfo.phone} (WhatsApp)</span>
+                  </a>
+                </div>
 
-              {/* Redes Sociales */}
-              <div className="mt-10">
-                <h3 className="text-xl font-sans font-semibold mb-4">
-                  Síguenos
-                </h3>
-                <div className="flex items-center space-x-6">
-                  {data.contactInfo.socials.map((social) => (
-                    <a
-                      key={social.name}
-                      href={social.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title={social.name}
-                      className="text-brand-neutral hover:text-brand-cta-orange transition-colors"
-                    >
-                      {socialIcons[social.icon]}
-                    </a>
-                  ))}
+                <div className="mt-10">
+                  <h3 className="text-xl font-sans font-semibold mb-4">
+                    Síguenos
+                  </h3>
+                  <div className="flex items-center space-x-6">
+                    {data.contactInfo.socials.map((social) => (
+                      <a
+                        key={social.name}
+                        href={social.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={social.name}
+                        className="text-brand-neutral hover:text-brand-cta-orange transition-colors"
+                      >
+                        {socialIcons[social.icon]}
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Columna Derecha: Llamado a la acción para enviar correo */}
-            <div className="bg-brand-primary-medium p-8 rounded-lg text-center">
-              <h2 className="text-3xl font-sans font-bold mb-4 text-brand-white">
-                {data.mailToAction.title}
-              </h2>
-              <p className="font-serif text-brand-neutral mb-6">
-                {data.mailToAction.description}
-              </p>
-              <a
-                href={mailtoHref}
-                className="inline-block w-full bg-brand-cta-orange text-brand-white font-sans font-bold uppercase py-4 rounded-md shadow-lg hover:bg-opacity-90 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-brand-cta-yellow/50"
-              >
-                {data.mailToAction.buttonText}
-              </a>
+              {/* Columna Derecha: Llamado a la acción para enviar correo */}
+              <div className="bg-brand-primary-medium p-8 rounded-lg text-center">
+                <h2 className="text-3xl font-sans font-bold mb-4 text-brand-white">
+                  {data.mailToAction.title}
+                </h2>
+                <p className="font-serif text-brand-neutral mb-6">
+                  {data.mailToAction.description}
+                </p>
+                <a
+                  href={mailtoHref}
+                  className="inline-block w-full bg-brand-cta-orange text-brand-white font-sans font-bold uppercase py-4 rounded-md shadow-lg hover:bg-opacity-90 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-brand-cta-yellow/50"
+                >
+                  {data.mailToAction.buttonText}
+                </a>
+              </div>
             </div>
-          </div>
-        </motion.section>
+          </section>
+        </motion.div>
       </motion.div>
     </>
   );
