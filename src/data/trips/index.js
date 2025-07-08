@@ -25,19 +25,4 @@
 //
 // ========================================================================
 
-export const tripIds = [
-  // Ejemplo 1: El id para la expedición a San Andrés.
-  // Corresponde al archivo `expedicion-san-andres.js` y al `id` dentro de él.
-  "expedicion-santa-marta-sept-2025",
-  // "expedicion-san-andres",
-
-  // Ejemplo 2: El id para la expedición a Providencia.
-  // "expedicion-providencia",
-
-  // Ejemplo 3: El id para la expedición a Malpelo.
-  // "santuario-malpelo",
-
-  // Cuando crees un nuevo viaje llamado, por ejemplo, `expedicion-gorgona.js`,
-  // simplemente añade su id en la siguiente línea:
-  // 'expedicion-gorgona',
-];
+export const tripIds = ['expedicion-santa-marta-sept-2025'];
