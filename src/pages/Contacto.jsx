@@ -138,7 +138,7 @@ const Contacto = () => {
               {/* Columna Izquierda: Información de contacto y redes sociales */}
               <div className='text-brand-white'>
                 <h2 className='text-3xl font-sans font-bold mb-6'>
-                  Canales de Comunicación
+                  {data.contactInfo.title}
                 </h2>
                 <div className='space-y-4 font-serif text-lg'>
                   <a

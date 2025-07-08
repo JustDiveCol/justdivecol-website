@@ -51,7 +51,8 @@ const DestinationCard = ({ destination, upcomingTrips }) => {
             </ul>
           ) : (
             <p className='font-serif text-sm text-brand-neutral/70'>
-              No hay fechas programadas. ¡Contáctanos!
+              Sin fechas programadas por ahora. ¡Hablemos y armamos tu viaje a
+              medida!
             </p>
           )}
         </div>

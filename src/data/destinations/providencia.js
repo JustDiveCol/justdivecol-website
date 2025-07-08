@@ -15,7 +15,7 @@ export const providenciaDestinationData = {
     'https://placehold.co/1920x800/36598B/FFFFFF?text=Banner+Providencia',
 
   destinationInfo: {
-    title: 'Naturaleza Intacta y Cultura Viva',
+    title: 'Naturaleza intacta y cultura viva',
     paragraphs: [
       'Providencia es un tesoro del Caribe que ha mantenido su esencia intacta. Con paisajes montañosos, playas vírgenes y arrecifes protegidos, es el destino ideal para quienes buscan conexión auténtica con la naturaleza.',
       'La isla también es cuna de una fuerte identidad raizal. Su gente, su lengua creole y su modo de vida tradicional hacen de cada visita una lección viva de cultura y resiliencia insular.',
@@ -23,7 +23,7 @@ export const providenciaDestinationData = {
   },
 
   diveSites: {
-    title: 'Sitios de Buceo Emblemáticos',
+    title: 'Sitios de buceo emblemáticos',
     sites: [
       {
         name: 'The Wall (La Pared)',
@@ -56,7 +56,7 @@ export const providenciaDestinationData = {
   },
 
   details: {
-    title: 'Información Clave',
+    title: 'Información clave',
     items: [
       { label: 'Nivel Requerido', value: 'Intermedio a Avanzado' },
       { label: 'Temperatura del Agua', value: '26-29°C' },

@@ -62,11 +62,11 @@ const DestinationTemplate = ({ destinationData, upcomingTrips }) => {
 
       <div className='container mx-auto p-4 md:p-8 grid lg:grid-cols-3 gap-8'>
         <main className='lg:col-span-2 space-y-16'>
-          {upcomingTrips && upcomingTrips.length > 0 && (
-            <motion.section variants={fadeInFromBottom}>
-              <h2 className='text-3xl font-sans font-bold text-brand-white mb-6'>
-                Próximos Viajes a este Destino
-              </h2>
+          <motion.section variants={fadeInFromBottom}>
+            <h2 className='text-3xl font-sans font-bold text-brand-white mb-6'>
+              Próximos viajes a este destino
+            </h2>
+            {upcomingTrips && upcomingTrips.length > 0 ? (
               <div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
                 {upcomingTrips.map((trip) => (
                   <Link
@@ -88,10 +88,17 @@ const DestinationTemplate = ({ destinationData, upcomingTrips }) => {
                   </Link>
                 ))}
               </div>
-            </motion.section>
-          )}
+            ) : (
+              // Mensaje que se muestra si no hay viajes disponibles
+              <div className='bg-brand-primary-medium/50 p-6 rounded-lg text-center'>
+                <h1 className='font-serif text-brand-neutral/80'>
+                  Las próximas fechas están en camino. ¡Empieza a alistar tus
+                  aletas!
+                </h1>
+              </div>
+            )}
+          </motion.section>
 
-          {/* CAMBIO: Se añade la nueva sección de información del destino */}
           {destinationInfo?.paragraphs && (
             <motion.section variants={fadeInFromBottom}>
               <h2 className='text-3xl font-sans font-bold text-brand-white mb-4'>

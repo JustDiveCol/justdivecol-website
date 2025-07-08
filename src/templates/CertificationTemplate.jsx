@@ -279,7 +279,8 @@ const CertificationTemplate = ({ courseData, availableTrips }) => {
             ) : (
               <div>
                 <p className='font-serif text-sm text-brand-neutral/80'>
-                  Próximamente nuevas fechas.
+                  Las próximas fechas están en camino. ¡Empieza a alistar tus
+                  aletas!
                 </p>
               </div>
             )}

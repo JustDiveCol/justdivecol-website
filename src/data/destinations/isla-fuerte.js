@@ -14,7 +14,7 @@ export const islaFuerteDestinationData = {
     'https://placehold.co/1920x800/36598B/FFFFFF?text=Banner+Isla+Fuerte',
 
   destinationInfo: {
-    title: 'Aventura Natural en Estado Puro',
+    title: 'Aventura natural en estado puro',
     paragraphs: [
       'Isla Fuerte es un pequeño paraíso al que se llega en lancha desde la costa de Córdoba. Su atmósfera tranquila y sin carreteras invita a desconectarse del mundo y conectarse con el océano.',
       'La isla es ideal para quienes buscan explorar arrecifes bien conservados, nadar entre manglares y experimentar una comunidad que vive en armonía con el entorno marino.',
@@ -22,7 +22,7 @@ export const islaFuerteDestinationData = {
   },
 
   diveSites: {
-    title: 'Sitios de Buceo Emblemáticos',
+    title: 'Sitios de buceo emblemáticos',
     sites: [
       {
         name: 'Bajo Bushnell',
@@ -43,7 +43,7 @@ export const islaFuerteDestinationData = {
   },
 
   gallery: {
-    title: 'Momentos de la Expedición',
+    title: 'Momentos en el destino',
     images: [
       'https://placehold.co/800x600/36598B/FFFFFF?text=Cueva+del+Toro',
       'https://placehold.co/800x600/36598B/FFFFFF?text=Arrecifes+de+Isla+Fuerte',
@@ -55,7 +55,7 @@ export const islaFuerteDestinationData = {
   },
 
   details: {
-    title: 'Información Clave',
+    title: 'Información clave',
     items: [
       { label: 'Nivel Requerido', value: 'Principiante a Intermedio' },
       { label: 'Temperatura del Agua', value: '26-29°C' },
